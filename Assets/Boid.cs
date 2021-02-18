@@ -30,7 +30,7 @@ public void OnDrawGizmos()
         Gizmos.DrawLine(transform.position, transform.position + acceleration);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + force * 10);
+        Gizmos.DrawLine(transform.position, transform.position + force);
 }
 
 public Vector3 CalculateForce()
@@ -42,7 +42,6 @@ public Vector3 CalculateForce()
                 if (b.isActiveAndEnabled)
                 {
                         force += b.Calculate() * b.weight;
-
                         float f = force.magnitude;
                         if (f >= maxForce)
                         {
