@@ -16,6 +16,7 @@ float mass = 1;
 public float maxSpeed = 5;
 public float maxForce = 100;
 
+public bool bankingEnabled = true;
 [Range(0.0f, 10.0f)]
 public float damping = 0.01f;
 [Range(0.0f, 1.0f)]
@@ -74,11 +75,19 @@ void Update()
 
         if (velocity.magnitude > 0)
         {
-                Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
-                transform.LookAt(transform.position + velocity, tempUp);
+                if (bankingEnabled)
+                {
+                        Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
+                        transform.LookAt(transform.position + velocity, tempUp);
 
-                transform.position = transform.position + velocity * Time.deltaTime;
-                velocity -= (damping * velocity * Time.deltaTime);
+                        transform.position = transform.position + velocity * Time.deltaTime;
+                        velocity -= (damping * velocity * Time.deltaTime);
+                }
+                else
+                {
+                        transform.LookAt(transform.position + velocity, transform.up);
+                        transform.position = transform.position + velocity * Time.deltaTime;
+                }
         }
 }
 }

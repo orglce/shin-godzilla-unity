@@ -261,6 +261,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxSpeed: 40
   maxForce: 100
+  bankingEnabled: 1
   damping: 0.01
   banking: 0.1
 --- !u!65 &84169743
@@ -584,6 +585,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxSpeed: 40
   maxForce: 100
+  bankingEnabled: 1
   damping: 0.01
   banking: 0.1
 --- !u!65 &563896058
@@ -1259,6 +1261,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxSpeed: 40
   maxForce: 100
+  bankingEnabled: 1
   damping: 0.01
   banking: 0.1
 --- !u!65 &1413300682
@@ -1449,7 +1452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1620237187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,7 +1526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688967053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 40.4}
+  m_LocalPosition: {x: 18.9, y: 0.5, z: 16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1241323805}
@@ -1587,6 +1590,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxSpeed: 40
   maxForce: 100
+  bankingEnabled: 1
   damping: 0.01
   banking: 0.1
 --- !u!65 &1726978532
@@ -1866,7 +1870,6 @@ GameObject:
   - component: {fileID: 2123754896}
   - component: {fileID: 2123754895}
   - component: {fileID: 2123754894}
-  - component: {fileID: 2123754900}
   m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
@@ -1883,16 +1886,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123754893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7409bc1348040f9f5a721c45f5eaeb4d, type: 3}
+  m_Script: {fileID: 11500000, guid: f4032dc55d0ddc42f8293562283fd6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  target: {x: 0, y: 0, z: 0}
-  distance: 20
-  radius: 10
-  randomAngle: 10
+  path: {fileID: 1620237187}
 --- !u!114 &2123754895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,6 +1908,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   maxSpeed: 5
   maxForce: 100
+  bankingEnabled: 1
   damping: 0.01
   banking: 0.1
 --- !u!65 &2123754896
@@ -1980,26 +1981,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123754893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -12}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10.4}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2123754900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123754893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355efa2c70302697882eacd2b721239d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 2
-  force: {x: 0, y: 0, z: 0}
-  boid: {fileID: 0}
-  targetGameObject: {fileID: 294719494}
-  target: {x: 0, y: 0, z: 0}
