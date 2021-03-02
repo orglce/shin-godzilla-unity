@@ -1870,6 +1870,7 @@ GameObject:
   - component: {fileID: 2123754896}
   - component: {fileID: 2123754895}
   - component: {fileID: 2123754894}
+  - component: {fileID: 2123754900}
   m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
@@ -1884,15 +1885,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123754893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4032dc55d0ddc42f8293562283fd6b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7409bc1348040f9f5a721c45f5eaeb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  path: {fileID: 1620237187}
+  target: {x: 0, y: 0, z: 0}
+  distance: 20
+  radius: 10
+  randomAngle: 10
+  twoD: 1
 --- !u!114 &2123754895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,3 +1992,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123754900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123754893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34da545eba32a40e9ef90248d252b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  force: {x: 0, y: 0, z: 0}
+  boid: {fileID: 0}
+  frequency: 0.3
+  radius: 10
+  theta: 0
+  amplitude: 80
+  distance: 5
+  axis: 1

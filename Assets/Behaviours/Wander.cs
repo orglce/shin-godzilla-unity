@@ -11,6 +11,7 @@ public Vector3 target = Vector3.zero;
 public float distance = 20f;
 public float radius = 10f;
 public float randomAngle = 10f;
+public bool twoD = true;
 
 Seek seek;
 
@@ -18,7 +19,6 @@ Vector3 direction;
 
 Quaternion previousRotation = Quaternion.identity;
 Quaternion currentRotation = Quaternion.identity;
-
 
 Vector3 newVector;
 Vector3 dirVector;
@@ -31,20 +31,21 @@ public void OnDrawGizmos()
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(worldCP, radius);
         Gizmos.DrawLine(worldCP, worldCP + target);
-
-
 }
 
 public override Vector3 Calculate()
 {
-        Quaternion rotation = Quaternion.Euler(Random.Range(-randomAngle, randomAngle), Random.Range(-randomAngle, randomAngle), Random.Range(-randomAngle, randomAngle));
+        Vector3 r = new Vector3(Random.Range(-randomAngle, randomAngle), Random.Range(-randomAngle, randomAngle), Random.Range(-randomAngle, randomAngle)) * Time.deltaTime * 100;
+        Quaternion rotation = Quaternion.Euler(r.x, r.y, r.z);
+
         target = Vector3.Normalize(rotation * target) * radius;
 
         Vector3 localTarget = (transform.forward * distance) + target;
+        if (twoD)
+                localTarget.y = 0;
 
         seek.target = transform.position + localTarget;
         return seek.Calculate();
-        // return Vector3.zero;
 }
 
 public void Start()
