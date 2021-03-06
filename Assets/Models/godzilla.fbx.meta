@@ -3,12 +3,7 @@ guid: ae49373d5368edda7840a39ce2e2e258
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Godzilla_D
-    second: {fileID: 2800000, guid: c24089a97278fd43e82cc92d310abd60, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
