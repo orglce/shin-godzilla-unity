@@ -15,6 +15,6 @@ void Start()
 // Update is called once per frame
 void Update()
 {
-        transform.LookAt(helipad.transform);
+        transform.LookAt(helipad.transform.position + new Vector3(0,0.3f,0));
 }
 }
