@@ -15,8 +15,8 @@ float mass = 1;
 
 public bool lookAtCustom = false;
 
-public float maxSpeed = 5;
-public float maxForce = 100;
+public float maxSpeed = 50;
+public float maxForce = 1000;
 
 public bool bankingEnabled = true;
 [Range(0.0f, 10.0f)]

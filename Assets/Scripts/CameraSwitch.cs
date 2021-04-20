@@ -16,8 +16,6 @@ public int waitInterval6 = 0;
 public int waitInterval7 = 0;
 
 int camPosition = 1;
-int waitSeconds = 0;
-
 
 void Start()
 {
@@ -46,6 +44,13 @@ void Update()
 
 
 
+}
+
+public void Switch()
+{
+        cameras[camPosition].SetActive(true);
+        cameras[camPosition-1].SetActive(false);
+        camPosition++;
 }
 
 IEnumerator WaitAndSwitch()

@@ -6,8 +6,11 @@ public class PathFollow : SteeringBehaviour
 {
 public Path path;
 
+public int distanceToPoint = 1;
+
 Seek seek;
 Arrive arrive;
+
 
 public void OnDrawGizmos()
 {
@@ -32,7 +35,7 @@ public override Vector3 Calculate()
         }
         else
         {
-                if ((boid.transform.position - path.waypoints[path.current]).magnitude < 1)
+                if ((boid.transform.position - path.waypoints[path.current]).magnitude < distanceToPoint)
                 {
                         path.current = (path.current + 1) % path.waypoints.Count;
                 }

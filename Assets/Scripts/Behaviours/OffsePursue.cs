@@ -16,15 +16,16 @@ public float stiffness = 0.5f;
 public void OnDrawGizmos()
 {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(worldTarget, 1);
+        // Gizmos.DrawSphere(worldTarget, 100);
+        // Gizmos.DrawSphere(worldTarget, 100);
 }
 
 public override Vector3 Calculate()
 {
-        if (worldTarget == Vector3.zero)
-                worldTarget = leader.transform.TransformPoint(offset);
-        else
-                worldTarget = Vector3.Lerp(worldTarget, leader.transform.TransformPoint(offset), Time.deltaTime * stiffness);
+        // if (worldTarget == Vector3.zero)
+        worldTarget = leader.transform.position + leader.transform.TransformDirection(offset);
+        // else
+        //         worldTarget = Vector3.Lerp(worldTarget, leader.transform.TransformDirection(leader.transform.position + offset), Time.deltaTime * stiffness);
 
         float distance = Vector3.Distance(transform.position, worldTarget);
         float time = distance / boid.maxSpeed;
@@ -38,8 +39,7 @@ public override Vector3 Calculate()
 void Start()
 {
         offset = transform.position - leader.transform.position;
-        offset = Quaternion.Inverse(leader.transform.rotation) * offset;
-
+        // offset = Quaternion.Inverse(leader.transform.rotation) * offset;
 
         arrive = gameObject.AddComponent(typeof(Arrive)) as Arrive;
         arrive.enabled = false;
