@@ -24,6 +24,7 @@ public void LaunchMissile()
         bullet.transform.position = transform.position;
         bullet.transform.rotation = transform.rotation;
 
+        bullet.GetComponent<ExplodeNearGodzilla>().godzilla = godzillaHead;
         bullet.GetComponent<Seek>().targetGameObject = godzillaHead;
 }
 }

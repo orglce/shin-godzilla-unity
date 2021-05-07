@@ -7,10 +7,10 @@ public class HeliShooting : MonoBehaviour
 
 public GameObject bulletPrefab;
 public GameObject spawnPoint;
+public GameObject godzilla;
 
 void Start()
 {
-
 }
 
 void OnEnable()
@@ -21,6 +21,8 @@ void OnEnable()
 void Shoot()
 {
         GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+        Destroy(gameObject, 10f);
+        bullet.GetComponent<ExplodeNearGodzilla>().godzilla = godzilla;
         bullet.transform.position = spawnPoint.transform.position;
         bullet.transform.rotation = transform.rotation;
 }

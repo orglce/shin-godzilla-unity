@@ -18,7 +18,7 @@ void Start()
 public void startFleetFiring() {
         foreach (GameObject heli in heliFleet)
         {
-                heli.GetComponent<CamLookAt>().enabled = true;
+                heli.GetComponent<Look>().enabled = true;
                 heli.GetComponent<HeliShooting>().enabled = true;
         }
 }

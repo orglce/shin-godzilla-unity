@@ -9,6 +9,6 @@ public GameObject target;
 
 void Update()
 {
-        transform.LookAt(target.transform.position + new Vector3(0,0.3f,0));
+        transform.LookAt(target.transform.position);
 }
 }

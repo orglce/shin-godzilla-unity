@@ -73,7 +73,7 @@ public override void Think()
         {
                 owner.GetComponent<HeliShooting>().enabled = true;
                 owner.GetComponent<Boid>().enabled = false;
-                owner.GetComponent<CamLookAt>().enabled = true;
+                owner.GetComponent<Look>().enabled = true;
                 heliController.startFleetFiring();
         }
 }
