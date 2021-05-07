@@ -16,8 +16,7 @@ public float stiffness = 0.5f;
 public void OnDrawGizmos()
 {
         Gizmos.color = Color.magenta;
-        // Gizmos.DrawSphere(worldTarget, 100);
-        // Gizmos.DrawSphere(worldTarget, 100);
+        Gizmos.DrawSphere(worldTarget, 10);
 }
 
 public override Vector3 Calculate()
