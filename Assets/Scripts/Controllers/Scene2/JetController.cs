@@ -21,6 +21,7 @@ void Update()
 public void LaunchMissile()
 {
         GameObject bullet = GameObject.Instantiate<GameObject>(missilePrefab);
+        Destroy(bullet, 10f);
         bullet.transform.position = transform.position;
         bullet.transform.rotation = transform.rotation;
 

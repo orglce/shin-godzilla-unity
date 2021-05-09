@@ -9,6 +9,11 @@ public GameObject target;
 
 void Update()
 {
+        // transform.LookAt(target.transform.position);
+}
+
+void LateUpdate()
+{
         transform.LookAt(target.transform.position);
 }
 }

@@ -13,10 +13,9 @@ void Start()
 
 void Update()
 {
-        if (Vector3.Distance(godzilla.transform.position, transform.position) < 10)
+        if (Vector3.Distance(godzilla.transform.position, transform.position) < 20)
         {
                 particleSystem.Play();
-                GetComponent<AudioSource>().Play();
                 if (GetComponent<Boid>() != null)
                         GetComponent<Boid>().enabled = false;
                 if (GetComponent<BulletMovingForward>() != null)
